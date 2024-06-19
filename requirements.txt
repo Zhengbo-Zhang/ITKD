@@ -1,0 +1,11 @@
+torch
+torchvision
+pytorch-lightning==1.9.5
+albumentations
+torchmetrics
+click
+wandb
+tensorboard
+opencv-python
+ipython
+datasets
