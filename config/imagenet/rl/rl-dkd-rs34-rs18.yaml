@@ -1,0 +1,47 @@
+dataset: imagenet
+data_dir: /mnt/data2/imagenet
+stu_model: resnet18
+tea_model: resnet34
+milestone:
+  - 30
+  - 60
+  - 90
+devices: 
+  - 0
+  - 1
+  - 2 
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+
+kd: dkd
+alpha: 0
+beta: 1
+dkd_alpha: 1
+dkd_beta: 1
+gamma: 1
+optimizer: SGD
+scheduler: multistep
+wandb: 0
+temperature: 4
+batch_size: 32
+num_workers: 32
+num_epochs: 120
+lr: 0.1
+weight_decay: 0.0001
+momentum: 0.9
+teacher_checkpoint: download_ckpts/cifar_teachers/resnet32x4_vanilla/ckpt_epoch_240.pth
+seed: 42
+outputs: outputs/imagenet/dkd-rs34-rs18
+rl: True
+clipping_ratio: 0.2
+c_epoch: 5
+a_epoch: 5
+decay_stragegy: cosine
+resume: ''
+warmup_epoch: 1
+rl_epoch: 5
+rl_balance: 1
+aug_epoch: 0

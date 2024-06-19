@@ -1,0 +1,37 @@
+dataset: imagenet
+data_dir: /mnt/data2/imagenet/
+stu_model: resnet18
+tea_model: resnet34
+milestone:
+  - 30
+  - 60
+  - 90
+devices: 
+  - 0
+kd: similarity
+alpha: 1
+beta: 3000
+gamma: 1
+optimizer: SGD
+scheduler: multistep
+wandb: 0
+temperature: 4
+batch_size: 64
+num_workers: 32
+num_epochs: 120
+lr: 0.1
+weight_decay: 0.0001
+momentum: 0.9
+teacher_checkpoint: download_ckpts/cifar_teachers/resnet32x4_vanilla/ckpt_epoch_240.pth
+seed: 42
+outputs: outputs/imagenet/similarity-rs32x4-rs8x4
+rl: True
+clipping_ratio: 0.2
+c_epoch: 5
+a_epoch: 5
+decay_stragegy: cosine
+resume: ''
+warmup_epoch: 20
+rl_epoch: 20
+rl_balance: 1
+aug_epoch: 0

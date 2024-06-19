@@ -1,0 +1,38 @@
+dataset: cifar100
+data_dir: ./data
+stu_model: vgg8
+tea_model: vgg13
+milestone:
+  - 150
+  - 180
+  - 210
+devices: 
+  - 0
+kd: dkd
+optimizer: SGD
+alpha: 0.5
+gamma: 0.1
+scheduler: multistep
+wandb: 1
+temperature: 4
+batch_size: 64
+num_workers: 4
+num_epochs: 240
+lr: 0.05
+weight_decay: 0.0005
+momentum: 0.9
+teacher_checkpoint: download_ckpts/cifar_teachers/vgg13_vanilla/ckpt_epoch_240.pth
+seed: 42
+outputs: outputs/cifar100/rl-vgg13-vgg8
+rl: False
+clipping_ratio: 0.2
+c_epoch: 1
+a_epoch: 1
+decay_stragegy: cosine
+resume: ''
+mixblock_weights: automix_weights/automix-256.pth
+mix_layer: 2
+mix_chan: 256
+scale_factor: 4
+warmup_epoch: 3
+rl_balance: 1
