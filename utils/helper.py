@@ -22,7 +22,7 @@ from .loss import (
     DKD_Loss,
     KL_Loss,
     Instance_Temp_KD_Loss,
-    RLKD_Loss,
+    ITKD_Loss,
     Similarity,
     VIDLoss,
 )
@@ -237,7 +237,7 @@ def check_and_get_loss(loss: str, **kwargs) -> tuple:
     kl_loss = None
     if loss != "":
         if loss == "rl":
-            kl_loss = RLKD_Loss()
+            kl_loss = ITKD_Loss()
             return cls_loss, kl_loss
         elif loss == "mlp":
             kl_loss = MLP_Loss(in_chan=kwargs["nc"] * 2)

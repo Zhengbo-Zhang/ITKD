@@ -17,7 +17,7 @@ from utils.trainer import (
     MKDDistiller,
     MLPDKDDistiller,
     MLPDistiller,
-    RLKDDistiller,
+    ITKDDistiller,
 )
 
 
@@ -70,7 +70,7 @@ def main(config: str, tags: list, val_path_file: str):
         # load teacher model
         teacher_checkpoint = torch.load(cfg["teacher_checkpoint"])
         tea_model.load_state_dict(teacher_checkpoint["model"])
-    # checkpoint = torch.load('/home/zyx/code/RLKD/outputs/distillation/d8lmhexr/checkpoints/distiller-epoch=186-val_acc=0.7129.ckpt')['state_dict']
+    # checkpoint = torch.load('/home/zyx/code/ITKD/outputs/distillation/d8lmhexr/checkpoints/distiller-epoch=186-val_acc=0.7129.ckpt')['state_dict']
     # # # checkpoint = torch.load('outputs/distillation/im7fnp3o/checkpoints/distiller-epoch=190-val_acc=0.71.ckpt')['state_dict']
 
     # # # # print(checkpoint.keys())
@@ -88,7 +88,7 @@ def main(config: str, tags: list, val_path_file: str):
             beta=cfg["dkd_beta"] if cfg.get("dkd_beta") else 0.0,
             warmup_epoch=cfg["warmup_epoch"],
         )
-        distiller = RLKDDistiller(
+        distiller = ITKDDistiller(
             student=stu_model,
             teacher=tea_model,
             kd_criterion=kd_criterion,

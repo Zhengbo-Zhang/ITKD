@@ -103,7 +103,7 @@ class Instance_Temp_KD_Loss(nn.Module):
         return F.softmax(stu_logit, dim=1), F.softmax(tea_logit, dim=1)
 
 
-class RLKD_Loss(nn.Module):
+class ITKD_Loss(nn.Module):
     def __init__(self) -> None:
         super().__init__()
 

@@ -207,7 +207,7 @@ class DKDDistiller(BaseDistiller):
         return {"loss": losses, "cls_loss": cls_loss, "kl_loss": kl_loss}
 
 
-class RLKDDistiller(BaseDistiller):
+class ITKDDistiller(BaseDistiller):
     """
     KD+RL
     KD部分，使用RL的输出，当为蒸馏温度。
