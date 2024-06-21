@@ -17,3 +17,6 @@ pip install -r requirements.txt
 
 weights are putted into pretrained folder. 
 
+## training on cifar100
+
+all training script is in train.sh. modify it to fit in your environment and choose one of the configuration. 
