@@ -1,6 +1,8 @@
 # ITKD
 code for the paper "instance temporary knowledge distillation"
 
+[Project page](https://www.zayx.me/ITKD.github.io/) | [arXiv]() (will be uploaded later)
+
 ## installation
 
 ```bash
@@ -13,10 +15,22 @@ conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit
 pip install -r requirements.txt
 ```
 
-## weights
+## Weights
 
 weights are putted into pretrained folder. 
 
-## training on cifar100
+## Training on cifar100
 
-all training script is in train.sh. modify it to fit in your environment and choose one of the configuration. 
+All training scripts reside within the file `train.sh`. Adapt this file to align with your specific environment, then proceed to select a configuration from the available options.  Note that the dataset will be automatically downloaded during the execution phase.
+
+```bash
+# modify the content inside and just run it
+bash train.sh
+```
+
+## Inference on cifar100
+The testing scripts mirror the training scripts in their structure and usage. Simply modify the content within the scripts to harmonize with your environment.
+```bash
+# modify the content inside and just run it
+bash test.sh
+```
