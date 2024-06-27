@@ -18,8 +18,10 @@ python test.py -c config/cifar100/rl/test.yaml \
         -v "outputs/cifar100/rl-rs56-rs20/distillation/vz6641uh/checkpoints/distiller-epoch=239-val_acc=0.7187.ckpt"
 
 # ITKD+dkd rs56-rs20
-# python main.py -c config/cifar100/rl/rl-dkd-rs56-rs20.yaml \
-#         -t 'ITKD+dkd best config'
+python main.py -c config/cifar100/rl/rl-dkd-rs56-rs20.yaml \
+        -t 'ITKD+dkd best config' \
+        -v "the pretrained_weights_path"
+        
 
 # ITKD+dkd rs110-rs20
 # python main.py -c config/cifar100/rl/rl-dkd-rs110-rs20.yaml \
