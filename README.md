@@ -1,7 +1,7 @@
 # ITKD
 code for the paper "instance temporary knowledge distillation"
 
-[Project page](https://www.zayx.me/ITKD.github.io/) | [arXiv]() (will be uploaded later)
+[Project page](https://www.zayx.me/ITKD.github.io/) | [arXiv](https://arxiv.org/abs/2407.00115)
 
 ## installation
 
